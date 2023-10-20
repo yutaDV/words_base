@@ -1,8 +1,8 @@
 class Dictionary {
   final String language;
-  final Map<String, List<String>> easyCategory;
-  final Map<String, List<String>> mediumCategory;
-  final Map<String, List<String>> hardCategory;
+  final List<String> easyCategory;
+  final List<String> mediumCategory;
+  final List<String> hardCategory;
 
   Dictionary({
     required this.language,
@@ -14,9 +14,9 @@ class Dictionary {
   factory Dictionary.fromJson(Map<String, dynamic> json) {
     return Dictionary(
       language: json['language'],
-      easyCategory: Map<String, List<String>>.from(json['easyCategory']),
-      mediumCategory: Map<String, List<String>>.from(json['mediumCategory']),
-      hardCategory: Map<String, List<String>>.from(json['hardCategory']),
+      easyCategory: List<String>.from(json['easyCategory']),
+      mediumCategory: List<String>.from(json['mediumCategory']),
+      hardCategory: List<String>.from(json['hardCategory']),
     );
   }
 
